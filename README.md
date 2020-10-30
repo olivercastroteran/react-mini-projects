@@ -1,4 +1,4 @@
-# react-mini-projects
+# React Mini Projects
 
 Mini projects build with React.js
 
