@@ -10,9 +10,15 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div>
-      <h2>app component</h2>
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/cocktail/:id" component={SingleCocktail} />
+        <Route path="*" component={Error} />
+      </Switch>
+    </Router>
   );
 }
 
