@@ -1,10 +1,12 @@
 import React from 'react';
+import useForm from './useForm';
 import './Form.css';
 
 const FormSignup = ({ submitForm }) => {
+  const { handleChange, handleSubmit, values } = useForm();
   return (
     <div className="form-content-right">
-      <form className="form" noValidate>
+      <form className="form" onSubmit={handleSubmit} noValidate>
         <h1>
           Get started with us today! Create your account by filling out the
           information below.
@@ -19,8 +21,8 @@ const FormSignup = ({ submitForm }) => {
             type="text"
             name="username"
             placeholder="Enter your username"
-            // value={values.username}
-            // onChange={handleChange}
+            value={values.username}
+            onChange={handleChange}
           />
           {/* {errors.username && <p>{errors.username}</p>} */}
         </div>
@@ -31,8 +33,8 @@ const FormSignup = ({ submitForm }) => {
             type="email"
             name="email"
             placeholder="Enter your email"
-            // value={values.email}
-            // onChange={handleChange}
+            value={values.email}
+            onChange={handleChange}
           />
           {/* {errors.email && <p>{errors.email}</p>} */}
         </div>
@@ -43,8 +45,8 @@ const FormSignup = ({ submitForm }) => {
             type="password"
             name="password"
             placeholder="Enter your password"
-            // value={values.password}
-            // onChange={handleChange}
+            value={values.password}
+            onChange={handleChange}
           />
           {/* {errors.password && <p>{errors.password}</p>} */}
         </div>
@@ -55,8 +57,8 @@ const FormSignup = ({ submitForm }) => {
             type="password"
             name="password2"
             placeholder="Confirm your password"
-            // value={values.password2}
-            // onChange={handleChange}
+            value={values.password2}
+            onChange={handleChange}
           />
           {/* {errors.password2 && <p>{errors.password2}</p>} */}
         </div>
@@ -64,7 +66,7 @@ const FormSignup = ({ submitForm }) => {
           Sign up
         </button>
         <span className="form-input-login">
-          Already have an account? Login <a href="#">here</a>
+          Already have an account? Login <a href="https://oliverct.com">here</a>
         </span>
       </form>
     </div>
