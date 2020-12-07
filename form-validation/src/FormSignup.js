@@ -1,9 +1,10 @@
 import React from 'react';
 import useForm from './useForm';
+import validate from './validateInfo';
 import './Form.css';
 
 const FormSignup = ({ submitForm }) => {
-  const { handleChange, handleSubmit, values } = useForm();
+  const { handleChange, handleSubmit, values, errors } = useForm(validate);
   return (
     <div className="form-content-right">
       <form className="form" onSubmit={handleSubmit} noValidate>
@@ -24,7 +25,7 @@ const FormSignup = ({ submitForm }) => {
             value={values.username}
             onChange={handleChange}
           />
-          {/* {errors.username && <p>{errors.username}</p>} */}
+          {errors.username && <p>{errors.username}</p>}
         </div>
         <div className="form-inputs">
           <label className="form-label">Email</label>
@@ -36,7 +37,7 @@ const FormSignup = ({ submitForm }) => {
             value={values.email}
             onChange={handleChange}
           />
-          {/* {errors.email && <p>{errors.email}</p>} */}
+          {errors.email && <p>{errors.email}</p>}
         </div>
         <div className="form-inputs">
           <label className="form-label">Password</label>
@@ -48,7 +49,7 @@ const FormSignup = ({ submitForm }) => {
             value={values.password}
             onChange={handleChange}
           />
-          {/* {errors.password && <p>{errors.password}</p>} */}
+          {errors.password && <p>{errors.password}</p>}
         </div>
         <div className="form-inputs">
           <label className="form-label">Confirm Password</label>
@@ -60,7 +61,7 @@ const FormSignup = ({ submitForm }) => {
             value={values.password2}
             onChange={handleChange}
           />
-          {/* {errors.password2 && <p>{errors.password2}</p>} */}
+          {errors.password2 && <p>{errors.password2}</p>}
         </div>
         <button className="form-input-btn" type="submit">
           Sign up
