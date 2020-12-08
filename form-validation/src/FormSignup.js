@@ -4,7 +4,10 @@ import validate from './validateInfo';
 import './Form.css';
 
 const FormSignup = ({ submitForm }) => {
-  const { handleChange, handleSubmit, values, errors } = useForm(validate);
+  const { handleChange, handleSubmit, values, errors } = useForm(
+    submitForm,
+    validate
+  );
   return (
     <div className="form-content-right">
       <form className="form" onSubmit={handleSubmit} noValidate>
